@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dashboard académico con datos simulados para explorar indicadores de fútbol ecuatoriano.">
+  <title>DataVision BI | LigaPro Ecuador 2026</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+  <nav class="navbar navbar-expand-lg dashboard-nav" aria-label="Navegación del dashboard"><div class="container-fluid dashboard-container"><a class="navbar-brand brand-mark" href="index.html"><span class="brand-icon"><i class="bi bi-bar-chart-line-fill"></i></span>DataVision <span>BI</span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboardNav" aria-controls="dashboardNav" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="dashboardNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3"><li class="nav-item"><a class="nav-link" href="index.html#fundamentos"><i class="bi bi-journal-text me-1"></i>Fundamentos BI</a></li><li class="nav-item"><span class="season-label"><i class="bi bi-circle-fill"></i> TEMPORADA 2026</span></li></ul></div></div></nav>
+  <main class="dashboard-container container-fluid">
+    <header class="dashboard-heading"><div><p class="dashboard-eyebrow">INTELIGENCIA DEPORTIVA <span>/</span> ECUADOR</p><h1>DataVision BI <span>| LigaPro Ecuador 2026</span></h1><p>Explora indicadores, compara equipos y analiza el rendimiento deportivo.</p></div><a class="back-link" href="index.html"><i class="bi bi-arrow-left"></i> Volver a aprender</a></header>
+    <div class="data-disclaimer" role="note"><i class="bi bi-info-circle-fill"></i><span>Datos de demostración académica. Las estadísticas y posiciones de este dashboard son simuladas y no representan necesariamente los resultados oficiales de LigaPro 2026.</span></div>
+
+    <section class="filter-bar" aria-label="Filtros del dashboard"><div class="filter-heading"><i class="bi bi-sliders2"></i><span>FILTRAR ANÁLISIS</span></div><label class="filter-control">Equipo<select id="team-filter" class="form-select"><option value="all">Todos los equipos</option></select></label><label class="filter-control">Jornada<select id="round-filter" class="form-select"><option value="all">Todas las jornadas</option></select></label><label class="filter-control">Periodo<select id="period-filter" class="form-select"><option value="all">Temporada parcial</option><option value="opening">Inicio · 1–3</option><option value="closing">Tramo · 4–7</option></select></label><button id="clear-filters" class="clear-filters"><i class="bi bi-arrow-counterclockwise"></i> Limpiar</button><span class="filter-status" id="filter-status" aria-live="polite"></span></section>
+
+    <section class="kpi-grid" aria-label="Indicadores clave">
+      <article class="kpi-tile"><div class="kpi-top"><span>PARTIDOS ANALIZADOS</span><i class="bi bi-calendar2-check"></i></div><div class="kpi-value" id="kpi-matches">—</div><div class="kpi-note">en el conjunto filtrado</div></article>
+      <article class="kpi-tile"><div class="kpi-top"><span>GOLES REGISTRADOS</span><i class="bi bi-bullseye"></i></div><div class="kpi-value" id="kpi-goals">—</div><div class="kpi-note">anotados en los partidos</div></article>
+      <article class="kpi-tile"><div class="kpi-top"><span>GOLES / PARTIDO</span><i class="bi bi-activity"></i></div><div class="kpi-value" id="kpi-average">—</div><div class="kpi-note">promedio de anotaciones</div></article>
+      <article class="kpi-tile kpi-highlight"><div class="kpi-top"><span>LÍDER EN PUNTOS</span><i class="bi bi-trophy"></i></div><div class="kpi-value kpi-team" id="kpi-leader">—</div><div class="kpi-note" id="kpi-leader-note">según partidos filtrados</div></article>
+      <article class="kpi-tile"><div class="kpi-top"><span>MÁS GOLES A FAVOR</span><i class="bi bi-lightning-charge"></i></div><div class="kpi-value kpi-team" id="kpi-top-scorer">—</div><div class="kpi-note" id="kpi-scorer-note">—</div></article>
+      <article class="kpi-tile"><div class="kpi-top"><span>PUNTOS DEL SELECCIONADO</span><i class="bi bi-person-check"></i></div><div class="kpi-value" id="kpi-selected">—</div><div class="kpi-note" id="kpi-selected-note">selecciona un equipo</div></article>
+    </section>
+
+    <div class="dashboard-grid">
+      <section class="chart-panel chart-points"><div class="panel-heading"><div><span class="panel-kicker">CLASIFICACIÓN</span><h2>Puntos por equipo</h2></div><span class="chart-mark"><i class="bi bi-bar-chart-fill"></i></span></div><div class="chart-wrap"><canvas id="points-chart" aria-label="Gráfico de barras: puntos por equipo" role="img"></canvas></div></section>
+      <section class="chart-panel chart-record"><div class="panel-heading"><div><span class="panel-kicker">RENDIMIENTO</span><h2>Balance del equipo</h2></div><span class="chart-mark mark-green"><i class="bi bi-pie-chart-fill"></i></span></div><p class="panel-subtitle" id="record-subtitle">Victorias, empates y derrotas</p><div class="chart-wrap chart-wrap-donut"><canvas id="record-chart" aria-label="Gráfico circular del balance de resultados del equipo" role="img"></canvas></div></section>
+      <section class="chart-panel chart-trend"><div class="panel-heading"><div><span class="panel-kicker">EVOLUCIÓN</span><h2>Puntos por jornada</h2></div><span class="chart-mark mark-blue"><i class="bi bi-graph-up"></i></span></div><div class="chart-wrap"><canvas id="trend-chart" aria-label="Gráfico de líneas de puntos por jornada" role="img"></canvas></div></section>
+      <section class="chart-panel chart-goals"><div class="panel-heading"><div><span class="panel-kicker">ATAQUE Y DEFENSA</span><h2>Goles a favor y en contra</h2></div><span class="chart-mark mark-coral"><i class="bi bi-crosshair"></i></span></div><div class="chart-wrap"><canvas id="goals-chart" aria-label="Gráfico de barras agrupadas de goles a favor y en contra" role="img"></canvas></div></section>
+      <section class="chart-panel chart-distribution"><div class="panel-heading"><div><span class="panel-kicker">VISTA GENERAL</span><h2>Resultados del conjunto</h2></div><span class="chart-mark mark-yellow"><i class="bi bi-pie-chart"></i></span></div><p class="panel-subtitle">Victorias, empates y derrotas en los partidos filtrados</p><div class="chart-wrap chart-wrap-donut"><canvas id="distribution-chart" aria-label="Gráfico de dona de resultados de partidos" role="img"></canvas></div></section>
+      <section class="analysis-panel"><div class="panel-heading"><div><span class="panel-kicker">LECTURA DEL DATO</span><h2>Análisis del equipo</h2></div><i class="bi bi-chat-square-text analysis-icon"></i></div><div class="team-analysis" id="team-analysis" aria-live="polite"></div><div class="analysis-footnote"><i class="bi bi-info-circle"></i> Interpretación calculada a partir del conjunto visible.</div></section>
+    </div>
+
+    <section class="table-panel"><div class="table-panel-heading"><div><span class="panel-kicker">TABLA DE POSICIONES</span><h2>Clasificación filtrada</h2><p id="table-scope">Ordenada por puntos, diferencia de goles y goles a favor.</p></div><label class="team-search"><i class="bi bi-search"></i><span class="visually-hidden">Buscar equipo</span><input type="search" id="team-search" placeholder="Buscar equipo..." autocomplete="off"></label></div><div class="partial-note" id="partial-note"><i class="bi bi-filter-circle"></i> La clasificación se calcula únicamente con los partidos que coinciden con los filtros.</div><div class="table-responsive"><table class="table standings-table align-middle mb-0"><thead><tr><th scope="col">POS</th><th scope="col">EQUIPO</th><th scope="col">PJ</th><th scope="col">PG</th><th scope="col">PE</th><th scope="col">PP</th><th scope="col">GF</th><th scope="col">GC</th><th scope="col">DG</th><th scope="col">PTS</th></tr></thead><tbody id="standings-body"></tbody></table><div class="empty-state d-none" id="empty-state">No hay equipos que coincidan con esa búsqueda.</div></div><div class="table-legend"><span><i></i> Posiciones destacadas en este conjunto</span><span> PJ partidos · PG ganados · PE empatados · PP perdidos · GF a favor · GC en contra · DG diferencia · PTS puntos</span></div></section>
+    <footer class="dashboard-footer"><span>DataVision BI <b>·</b> recurso educativo</span><span>Datos ilustrativos; no constituyen estadísticas oficiales.</span><a href="index.html#challenge">Probar BI Challenge <i class="bi bi-arrow-up-right"></i></a></footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

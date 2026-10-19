@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aprende fundamentos de Business Intelligence con ejemplos prácticos y un reto interactivo.">
+  <title>DataVision BI | Aprende a leer los datos</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top site-nav" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand brand-mark" href="#inicio"><span class="brand-icon"><i class="bi bi-bar-chart-line-fill"></i></span>DataVision <span>BI</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fundamentos">Fundamentos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#decisiones">Decisiones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#etl">Proceso ETL</a></li>
+          <li class="nav-item"><a class="nav-link" href="#challenge">Cuestionario</a></li>
+          <li class="nav-item"><a class="nav-link nav-dashboard" href="dashboard.html"><i class="bi bi-graph-up-arrow me-1"></i>Dashboard deportivo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero-section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> DECISIONES CON EVIDENCIA</p>
+          <h1>Los datos cuentan historias. <em>BI te ayuda a descubrirlas.</em></h1>
+          <p class="hero-lede">Business Intelligence convierte datos dispersos en información que orienta mejores decisiones. Aprende sus fundamentos y ponlos a prueba con ejemplos cercanos.</p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a class="btn btn-ink btn-lg" href="#fundamentos">Comenzar a aprender <i class="bi bi-arrow-down-right ms-2"></i></a>
+            <a class="btn btn-outline-ink btn-lg" href="dashboard.html">Explorar dashboard <i class="bi bi-arrow-up-right ms-2"></i></a>
+          </div>
+          <div class="hero-footnote"><span class="hero-footnote-line"></span> Del dato a la acción, paso a paso.</div>
+        </div>
+        <div class="hero-visual" aria-label="Ilustración de análisis de datos con indicadores y gráfico de tendencia" role="img">
+          <img src="img/hero-data.svg" alt="Gráfico de barras y línea ascendente acompañados de indicadores de rendimiento">
+          <div class="hero-stamp"><span>DATOS</span><i class="bi bi-arrow-right"></i><span>DECISIONES</span></div>
+        </div>
+      </div>
+      <div class="hero-bottom container"><span>01 / FUNDAMENTOS</span><span>02 / APLICACIÓN</span><span>03 / RETO BI</span></div>
+    </section>
+
+    <section class="section-pad fundamentals-section" id="fundamentos">
+      <div class="container">
+        <div class="section-heading row align-items-end gy-3">
+          <div class="col-lg-7"><p class="eyebrow">01 — CONCEPTOS CLAVE</p><h2>Entender el dato cambia <span>la perspectiva.</span></h2></div>
+          <p class="col-lg-4 offset-lg-1 section-intro">BI conecta tecnología y conocimiento del negocio para que las decisiones no dependan solo de intuiciones.</p>
+        </div>
+        <div class="row g-3 fundamentals-grid">
+          <article class="col-md-6 col-lg-4"><div class="learning-card card-tall"><span class="card-icon"><i class="bi bi-lightbulb"></i></span><p class="card-kicker">EL CONCEPTO</p><h3>¿Qué es BI?</h3><p>Business Intelligence reúne procesos, tecnologías y herramientas que transforman datos en información útil para respaldar decisiones.</p><span class="card-index">01</span></div></article>
+          <article class="col-md-6 col-lg-4"><div class="learning-card"><span class="card-icon icon-green"><i class="bi bi-bullseye"></i></span><p class="card-kicker">EL PROPÓSITO</p><h3>¿Para qué sirve?</h3><ul class="compact-list"><li>Analizar el rendimiento</li><li>Identificar tendencias y problemas</li><li>Comparar resultados y medir objetivos</li><li>Mejorar la toma de decisiones</li></ul><span class="card-index">02</span></div></article>
+          <article class="col-md-6 col-lg-4"><div class="learning-card"><span class="card-icon icon-coral"><i class="bi bi-diagram-3"></i></span><p class="card-kicker">EL ECOSISTEMA</p><h3>Componentes de BI</h3><p>Fuentes de datos, integración, almacenamiento, análisis y visualización trabajan en conjunto para llevar la información hasta quienes deciden.</p><span class="card-index">03</span></div></article>
+          <article class="col-md-6 col-lg-6"><div class="learning-card learning-card-wide"><span class="card-icon icon-lilac"><i class="bi bi-tools"></i></span><div><p class="card-kicker">EL KIT DE TRABAJO</p><h3>Herramientas utilizadas</h3><p><strong>Power BI</strong> y <strong>Tableau</strong> crean informes visuales; <strong>Excel</strong> facilita el análisis tabular; <strong>Looker Studio</strong> conecta fuentes y comparte paneles en línea.</p></div><span class="card-index">04</span></div></article>
+          <article class="col-md-6 col-lg-6"><div class="learning-card learning-card-wide kpi-card"><span class="card-icon icon-yellow"><i class="bi bi-speedometer2"></i></span><div><p class="card-kicker">MEDIR LO QUE IMPORTA</p><h3>Indicadores KPI</h3><p>Un KPI es una medida clave vinculada a un objetivo. Ejemplos: ventas mensuales, satisfacción de clientes o puntos obtenidos por un equipo.</p><div class="kpi-examples"><span>VENTAS <b>↑</b></span><span>EXPERIENCIA <b>★</b></span><span>DEPORTE <b>◎</b></span></div></div><span class="card-index">05</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad decision-section" id="decisiones">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">02 — DEL ANÁLISIS A LA ACCIÓN</p><h2>Una decisión sólida <span>tiene un proceso.</span></h2><p class="section-intro mt-3">Una secuencia sencilla ayuda a distinguir hechos, interpretaciones y acciones.</p></div>
+        <div class="decision-steps" aria-label="Seis etapas para tomar una decisión informada">
+          <div class="decision-step"><span>01</span><h3>Identificar</h3><p>Definir el problema</p></div><div class="step-connector"><i class="bi bi-arrow-right"></i></div>
+          <div class="decision-step"><span>02</span><h3>Recopilar</h3><p>Reunir datos relevantes</p></div><div class="step-connector"><i class="bi bi-arrow-right"></i></div>
+          <div class="decision-step"><span>03</span><h3>Analizar</h3><p>Buscar patrones</p></div><div class="step-connector"><i class="bi bi-arrow-right"></i></div>
+          <div class="decision-step"><span>04</span><h3>Comparar</h3><p>Valorar alternativas</p></div><div class="step-connector"><i class="bi bi-arrow-right"></i></div>
+          <div class="decision-step"><span>05</span><h3>Elegir</h3><p>Actuar con evidencia</p></div><div class="step-connector"><i class="bi bi-arrow-right"></i></div>
+          <div class="decision-step"><span>06</span><h3>Evaluar</h3><p>Medir el resultado</p></div>
+        </div>
+        <div class="example-panel row g-0">
+          <div class="col-lg-4 example-title"><p class="eyebrow">CASO DE NEGOCIO</p><h3>Las ventas bajaron.<br>¿Qué hacemos?</h3><p>Una tienda revisa sus datos antes de mover inventario.</p></div>
+          <div class="col-lg-8 example-details">
+            <div><span class="evidence-label label-observed">DATO OBSERVADO</span><p>Las ventas totales cayeron 12% frente al mes anterior. <small>Ejemplo ilustrativo</small></p></div>
+            <div><span class="evidence-label label-insight">CONCLUSIÓN</span><p>La caída se concentra en dos productos con quiebres de stock frecuentes.</p></div>
+            <div><span class="evidence-label label-action">DECISIÓN</span><p>Ajustar el inventario de esos productos y revisar el efecto en cuatro semanas.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad etl-section" id="etl">
+      <div class="container">
+        <div class="section-heading row align-items-end gy-3"><div class="col-lg-7"><p class="eyebrow">03 — PREPARAR PARA CONFIAR</p><h2>ETL: el recorrido <span>del dato útil.</span></h2></div><p class="col-lg-4 offset-lg-1 section-intro">Antes de visualizar, los datos deben pasar por un flujo de preparación consistente.</p></div>
+        <div class="etl-flow">
+          <article class="etl-block"><span class="etl-number">01</span><i class="bi bi-download etl-icon"></i><p class="etl-word">EXTRACT</p><h3>Extracción</h3><p>Obtiene información de bases de datos, archivos CSV, hojas de cálculo y otras fuentes.</p><div class="etl-source">CSV · SQL · XLSX</div></article>
+          <div class="etl-arrow"><i class="bi bi-arrow-right"></i></div>
+          <article class="etl-block etl-transform"><span class="etl-number">02</span><i class="bi bi-sliders etl-icon"></i><p class="etl-word">TRANSFORM</p><h3>Transformación</h3><p>Limpia, organiza, valida y prepara registros para analizarlos de forma consistente.</p><div class="etl-source">LIMPIAR · VALIDAR</div></article>
+          <div class="etl-arrow"><i class="bi bi-arrow-right"></i></div>
+          <article class="etl-block etl-load"><span class="etl-number">03</span><i class="bi bi-database-check etl-icon"></i><p class="etl-word">LOAD</p><h3>Carga</h3><p>Guarda los datos procesados en un destino listo para informes y dashboards.</p><div class="etl-source">ALMACÉN · DASHBOARD</div></article>
+        </div>
+        <div class="etl-demo row align-items-center g-4">
+          <div class="col-lg-4"><p class="eyebrow">PRUÉBALO</p><h3>Una venta, tres pasos.</h3><p class="mb-0">Observa cómo los registros originales se convierten en una tabla limpia.</p><button class="btn btn-ink mt-4" id="run-etl"><i class="bi bi-play-fill me-2"></i>Simular proceso ETL</button></div>
+          <div class="col-lg-8"><div class="etl-console" aria-live="polite"><div class="console-top"><span><i class="bi bi-circle-fill"></i> SIMULACIÓN DE VENTAS</span><span id="etl-state">LISTA</span></div><div class="progress etl-progress" role="progressbar" aria-label="Progreso del proceso ETL" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" id="etl-progress"></div></div><div class="etl-message" id="etl-message">Presiona el botón para iniciar el flujo de datos.</div><div class="table-responsive"><table class="table table-sm etl-table mb-0"><thead><tr><th>Producto</th><th>Fecha</th><th>Unidades</th><th>Precio</th></tr></thead><tbody id="etl-rows"><tr><td> cuaderno A4 </td><td>2026/04/03</td><td>2</td><td>3.50</td></tr><tr class="raw-invalid"><td>Lapiz HB</td><td>04-03-26</td><td>-1</td><td>0.50</td></tr><tr><td>Marcador azul</td><td>2026/04/04</td><td>5</td><td>1.20</td></tr></tbody></table></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad real-life-section" id="caso">
+      <div class="container">
+        <div class="real-life-header"><div><p class="eyebrow">04 — APLICACIÓN</p><h2>BI en la vida real.</h2></div><span class="simulation-tag"><i class="bi bi-info-circle"></i> CIFRAS SIMULADAS</span></div>
+        <div class="real-life-grid">
+          <div class="real-life-lead"><span class="store-mark"><i class="bi bi-shop-window"></i></span><h3>Una tienda quiere vender mejor.</h3><p>El equipo combina ventas, inventario y visitas para entender por qué algunos productos no alcanzan sus objetivos.</p><a href="dashboard.html" class="text-link">Ver BI aplicado al deporte <i class="bi bi-arrow-up-right"></i></a></div>
+          <div class="real-life-facts"><div><span>01 / PROBLEMA</span><p>Ventas mensuales por debajo del objetivo.</p></div><div><span>02 / DATOS</span><p>Ventas por producto, inventario y tráfico por día.</p></div><div><span>03 / ANÁLISIS</span><p>Los sábados concentran más visitas, pero faltan unidades de los productos más vendidos.</p></div><div><span>04 / DECISIÓN</span><p>Reponer antes del fin de semana y probar una ubicación distinta para productos complementarios.</p></div><div><span>05 / INDICADORES</span><p>Ventas semanales, disponibilidad de stock y conversión de visitas a compra.</p></div></div>
+          <div class="metric-illustration"><div class="metric-caption">SEGUIMIENTO DE PRUEBA <span>SIMULADO</span></div><div class="metric-value">+8.4<small>%</small></div><p>ventas semanales frente al periodo anterior</p><div class="metric-bars" aria-hidden="true"><i style="--bar:34%"></i><i style="--bar:48%"></i><i style="--bar:42%"></i><i style="--bar:68%"></i><i style="--bar:58%"></i><i style="--bar:82%"></i><i style="--bar:100%"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad quiz-section" id="challenge">
+      <div class="container quiz-layout">
+        <div class="quiz-intro"><p class="eyebrow">05 — PON A PRUEBA LO APRENDIDO</p><h2>¿Qué tan bien lees los datos?</h2><p>Responde 12 preguntas, suma puntos y descubre tu rango BI. Una pregunta a la vez; cada respuesta incluye una explicación.</p><div class="quiz-badges"><span><i class="bi bi-lightning-charge"></i> 12 preguntas</span><span><i class="bi bi-award"></i> 4 rangos</span></div></div>
+        <div class="quiz-box" id="quiz-box" aria-live="polite">
+          <div class="quiz-start" id="quiz-start"><div class="quiz-emblem"><i class="bi bi-patch-question"></i></div><p class="eyebrow">BI CHALLENGE</p><h3>Tu siguiente decisión empieza aquí.</h3><p>Comprueba lo que sabes de BI, KPI, calidad de datos y ETL.</p><button class="btn btn-ink" id="start-quiz">Iniciar desafío <i class="bi bi-arrow-right ms-2"></i></button></div>
+          <div class="quiz-game d-none" id="quiz-game"><div class="quiz-meta"><span id="quiz-counter">PREGUNTA 1 / 12</span><span id="quiz-score">0 PUNTOS</span></div><div class="progress quiz-progress"><div class="progress-bar" id="quiz-progress"></div></div><h3 id="quiz-question"></h3><div class="quiz-options" id="quiz-options"></div><div class="quiz-feedback d-none" id="quiz-feedback" aria-live="polite"></div><button class="btn btn-ink d-none" id="next-question">Siguiente pregunta <i class="bi bi-arrow-right ms-2"></i></button></div>
+          <div class="quiz-result d-none" id="quiz-result" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><a class="footer-brand" href="#inicio">DataVision BI</a><span>Aprender a decidir mejor empieza por hacer mejores preguntas.</span><a href="dashboard.html">Explorar LigaPro 2026 <i class="bi bi-arrow-up-right"></i></a></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

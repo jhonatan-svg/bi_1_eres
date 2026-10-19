@@ -1,4 +1,34 @@
 const etlButton = document.querySelector('#run-etl');
+const themeToggle = document.querySelector('#theme-toggle');
+
+if (themeToggle) {
+  let currentTheme = 'light';
+  try {
+    currentTheme = window.localStorage.getItem('datavision-theme') || 'light';
+  } catch {
+    currentTheme = 'light';
+  }
+
+  const applyTheme = (theme) => {
+    const isDark = theme === 'dark';
+    document.body.dataset.theme = theme;
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggle.setAttribute('aria-label', `Cambiar a tema ${isDark ? 'claro' : 'oscuro'}`);
+    themeToggle.setAttribute('title', `Cambiar a tema ${isDark ? 'claro' : 'oscuro'}`);
+    themeToggle.innerHTML = `<i class="bi ${isDark ? 'bi-sun-fill' : 'bi-moon-stars-fill'}" aria-hidden="true"></i>`;
+  };
+
+  applyTheme(currentTheme);
+  themeToggle.addEventListener('click', () => {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(currentTheme);
+    try {
+      window.localStorage.setItem('datavision-theme', currentTheme);
+    } catch {
+      // The selected theme still applies for this page view.
+    }
+  });
+}
 
 if (etlButton) {
   const progressBar = document.querySelector('#etl-progress');

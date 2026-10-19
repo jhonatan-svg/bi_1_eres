@@ -9,3 +9,29 @@
 @media(max-width:370px){.dashboard-heading h1{font-size:20px}.kpi-top{letter-spacing:0}.filter-bar{grid-template-columns:1fr}.filter-heading{grid-column:auto}.filter-control{width:100%}}
 .filter-status{display:block;margin-left:auto;color:#65756b;font-size:9px;white-space:nowrap}
 @media(max-width:767px){.filter-status{grid-column:1/-1;margin:0}}
+.dashboard-actions{display:flex;align-items:center;gap:14px}
+.export-pdf{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border:1px solid #cbd7c8;border-radius:2px;background:#fff;color:#3e5b45;font-family:var(--body);font-size:10px;font-weight:700;white-space:nowrap}
+.export-pdf:hover,.export-pdf:focus{background:#edf4e5;border-color:#9dbb85}
+@media(max-width:767px){.dashboard-actions{width:100%;flex-wrap:wrap;gap:10px}.export-pdf{order:1}.dashboard-actions .back-link{order:2}}
+@page{size:landscape;margin:10mm}
+@media print{
+	body{background:#fff!important;color:#142c2b!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+	.dashboard-nav,.back-link,.export-pdf,.filter-bar,.team-search,.dashboard-footer a{display:none!important}
+	.dashboard-container{width:100%;max-width:none;padding:0 12px}
+	.dashboard-heading{padding:0 0 12px}
+	.dashboard-heading h1{font-size:21px}
+	.data-disclaimer{margin-bottom:10px}
+	.kpi-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin-bottom:8px}
+	.kpi-tile{min-height:86px;padding:9px}
+	.kpi-value{font-size:19px;margin-top:8px}
+	.kpi-team{font-size:12px}
+	.dashboard-grid{grid-template-columns:1fr 1fr;gap:8px}
+	.chart-panel,.analysis-panel{min-height:220px;padding:11px;break-inside:avoid}
+	.chart-points,.chart-trend,.chart-goals,.chart-record,.chart-distribution{min-height:220px}
+	.chart-wrap{height:154px;margin-top:6px}
+	.chart-wrap-donut,.chart-wrap-donut canvas{height:154px;max-height:154px}
+	.table-panel{margin-top:8px;break-inside:avoid}
+	.table-panel-heading{padding:10px 12px}
+	.standings-table thead th,.standings-table tbody td{padding:5px 8px}
+	.table-legend,.dashboard-footer{padding:7px 12px}
+}

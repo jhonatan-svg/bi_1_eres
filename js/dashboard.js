@@ -203,4 +203,5 @@ document.querySelector('#clear-filters').addEventListener('click', () => {
   searchInput.value = '';
   renderDashboard();
 });
+document.querySelector('#export-pdf').addEventListener('click', () => window.print());
 renderDashboard();
